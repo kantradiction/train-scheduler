@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Train Scheduler</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="jumbotron">
+			      <h1 class="text-center">Anytime is Train Time</h1>
+			      <h2 class="text-center">Choo Choo. Chee Chee.</h2>
+			    </div>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">Current Train Schedule</div>
+					<div class="card-block">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Train Name</th>
+									<th>Destination</th>
+									<th>Frequency (min)</th>
+									<th>Next Arrival</th>
+									<th>Mins Away</th>
+								</tr>
+							</thead>
+							<tbody id="list-trainSchedule">
+								<tr>
+									<td scope="row" id="schedule-trainName"></td>
+									<td id="schedule-destination"></td>
+									<td id="schedule-frequency"></td>
+									<td id="schedule-nextArrival"></td>
+									<td id="schedule-minsAway"></td>
+								</tr> 
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<!-- add employees form -->
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">Add Train</div>
+					<div class="card-block">
+						<form>
+			                <div class="form-group">
+			                  <label for="form-trainName"><span>Train Name</span></label>
+			                  <input class="form-control" id="form-trainName" type="text">
+			                </div>
+			                <div class="form-group">
+			                  <label for="form-destination"><span>Destination</span></label>
+			                  <input class="form-control" id="form-destination" type="text">
+			                </div>
+			                <div class="form-group">
+			                  <label for="form-firstTime"><span>First Train Time (HH:mm - military time)</span></label>
+			                  <input class="form-control" id="form-firstTime" type="text">
+			                </div>
+			                <div class="form-group">
+			                  <label for="form-frequency"><span>Frequency (min)</span></label>
+			                  <input class="form-control" id="form-frequency" type="text">
+			                </div>
+			                <button class="btn btn-primary" id="submit-trainSchedule" type="submit">Submit</button>
+			              </form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+</html>
